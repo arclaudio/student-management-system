@@ -26,4 +26,10 @@ public class StudentServiceImpl implements StudentService {
                 .collect(Collectors.toList());
 
     }
+
+    @Override
+    public void createStudent(StudentDTO studentDTO) {
+        Student student = StudentMapper.mapToStudent(studentDTO);
+        studentRepository.save(student);
+    }
 }
